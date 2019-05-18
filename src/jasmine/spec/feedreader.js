@@ -54,10 +54,12 @@ $(function() {
 
     /* TODO: Write a new test suite named "The menu" */
     describe("The menu", () => {
-        let body;
+        let body,
+            menuIcon;
 
         beforeEach(() => {
-           body = document.querySelector("body");
+           body = document.querySelector("body"),
+           menuIcon = document.querySelector(".menu-icon-link");
         });
 
         /* TODO: Write a test that ensures the menu element is
@@ -65,7 +67,7 @@ $(function() {
          * the CSS to determine how we're performing the
          * hiding/showing of the menu element.
          */
-        it("the menu is hidden", () => {
+        it("the menu is hidden by default", () => {
             expect(body).toHaveClass("menu-hidden");
         });
 
@@ -74,6 +76,13 @@ $(function() {
           * should have two expectations: does the menu display when
           * clicked and does it hide when clicked again.
           */
+        it("the menu changes visibility when menu icon is clicked", () => {
+            menuIcon.click();
+            expect(body).not.toHaveClass("menu-hidden");
+
+            menuIcon.click();
+            expect(body).toHaveClass("menu-hidden");
+        });
     });
 
     /* TODO: Write a new test suite named "Initial Entries" */
