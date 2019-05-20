@@ -112,9 +112,28 @@ $(function() {
 
 
     /* TODO: Write a new test suite named "New Feed Selection" */
-
+    describe("New Feed Selection", () => {
+        let feedLink = [],
+            feedsContainer = document.querySelector(".feed");
         /* TODO: Write a test that ensures when a new feed is loaded
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
          */
+        beforeEach( done => {
+            setTimeout(() => {
+                feedLink.push(Array.from(feedsContainer.firstElementChild.href).join(""));
+                loadFeed(1, done);
+            }, 2000);
+
+        });
+
+        it("content changes when a new feed is loaded", done => {
+            setTimeout(() => {
+                expect(feedsContainer.firstElementChild.href).not.toBe(feedLink[0]);
+                done();
+            }, 4000);
+        });
+
+    });
+
 }());
