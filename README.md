@@ -31,5 +31,5 @@ Since it is a small project, I've decided to use [Prepros](https://prepros.io/),
 * [Jasmine cheatsheet](https://devhints.io/jasmine)
 * [Jasmine matchers](https://jasmine.github.io/api/3.3/matchers.html)
 
-## LICENSE
+## License
 Licensed under the [MIT License](LICENSE.md).
